@@ -1,0 +1,51 @@
+.btn,
+.jumbotron,
+.nav :hover {
+    border-radius: 0px;
+}
+
+body {
+    background: #EBEBEB;
+}
+
+.cent {
+    justify-content: center;
+    align-items: center;
+}
+
+.spinnercen {
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menubtn {
+    background-color: #6E69EF;
+    color: #ffffff;
+    border-radius: 23px;
+}
+
+.frombto {
+    margin-bottom: 73px;
+}
+
+.cartcard {
+    align-items: center;
+    border: none;
+    background-color: bisque;
+}
+
+.menubox {
+    background-color: #ffffff;
+}
+
+
+/* footer {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+} */

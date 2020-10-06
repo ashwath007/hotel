@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.itemcen {
+    align-items: center;
+    text-align: center;
+}
+
+.btnbox {
+    margin-top: 15px;
+    width: 5px;
+    height: 3.8vh;
+}
+
+.countbtn {
+    width: 10%;
+    height: 20%;
+}
+
+.boxs {
+    background-color: antiquewhite;
+}
+
+.boxtxt {
+    color: black;
+}
+
+.typebox {
+    width: 9vh;
+    height: 0.7vh;
+}
+
+.boxtxts {
+    font-size: small;
+    font-family: 'Poppins', sans-serif;
+}
+
+.typeboxs {
+    padding: 2;
+}
+
+.typetxt {
+    font-size: 12px;
+    padding: 2;
+    background-color: bisque;
+}
+
+.imgbotbox {
+    height: 20%;
+}
+
+.backbox {
+    background-color: #FCFCFC;
+}
+
+.cartcard {
+    justify-content: center;
+    background-color: #5A18F3;
+    align-items: stretch;
+    color: #ffffff;
+}
+
+.carttxt {
+    font-size: 15px;
+}
+
+.rr {
+    right: 0;
+}
+
+.offertab {
+    background-color: #ffffff;
+}
+
+.backoffer {
+    background-color: #5A18F3;
+    justify-content: space-between;
+}
+
+.boxO {
+    background-color: #21bd55;
+    border-radius: 8px;
+}
+
+.totaltxtt {
+    justify-content: end;
+    text-align: right;
+}
+
+.cartpage {
+    background-color: ghostwhite;
+}
+
+.eatbtn {
+    background-color: #F3B431;
+    padding-top: 83px;
+}
+
+.gifbox {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.gifimg {
+    width: 180px;
+    height: 140px;
+    border-radius: 23px;
+}
+
+.jji {
+    background-color: blanchedalmond;
+}
+
+.btmm {
+    margin-bottom: 63px;
+}
+
+.btmmbtmm {
+    margin-bottom: 145px;
+}

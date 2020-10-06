@@ -1,0 +1,16 @@
+body {
+    background-color: #ffffff;
+}
+
+.cardverify {
+    border: none
+}
+
+.verifytxt {
+    text-align: center;
+}
+
+.cardbox {
+    height: 40%;
+    width: 90%;
+}

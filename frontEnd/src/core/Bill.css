@@ -1,0 +1,40 @@
+.backbill {
+    background-color: black;
+    height: 100%;
+}
+
+.locbtn {
+    background-color: white;
+    color: orange;
+}
+
+.box {
+    margin-bottom: 223px;
+}
+
+.paymentbox {
+    background-color: orange;
+}
+
+boby {
+    background-color: grey;
+}
+
+.paymentboxbtn {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.addcard {
+    background-color: brown;
+    color: white;
+}
+
+.boxbox {
+    background-color: orange;
+}
+
+.codbox {
+    margin-top: 193px;
+}
