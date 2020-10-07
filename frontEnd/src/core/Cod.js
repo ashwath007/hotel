@@ -116,7 +116,7 @@ const showUserDelAddres  = () => {
         console.log("S o  price ",price);
         localStorage.setItem("orderID", uuidv4()  );
       
-        console.log("location : ",location);
+        console.log("location : ",useraddress);
         console.log("userId : ",userId,token);
         console.log("totalPrice : ",totalPrice);
         console.log("cartproducts : S o ",cartproducts);
@@ -251,19 +251,20 @@ const shoemap  = () => {
     </div>
             <div className="container codbox">
             <div class="alert alert-primary" role="alert">
-  We are currently available in<a href="#" class="alert-link"> Malumichampatti</a>. And we can do delivery !!
+ <a href="#" class="alert-link">         {useraddress}
+</a>
 </div>
             <form>
   <div class="form-group">
     <label>Your Address</label>
-    <input placeholder="Enter the address" onChange={(e)=>{locationUser(e)}} type="text" class="form-control" required/>
+    <input placeholder="Enter the address" onChange={(e)=>{locationUser(e)}} value={useraddress} type="text" class="form-control" required/>
   </div>
       {isRedirectHome()}
     {loadAllUserDatas()}
 
       {showUserDelAddres()}
   <button onClick={confirmOrder} type="submit" class="btn btn-primary">Confirm Address</button>
-  <button onClick={getGLocation} type="submit" class="btn btn-primary">Confirm Address</button>
+  <button onClick={getGLocation} type="submit" class="btn btn-primary">Loc</button>
 
 </form>
 

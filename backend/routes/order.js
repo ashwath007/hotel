@@ -10,7 +10,10 @@ const {
     getAllOrdersToday,
     getOrderStatus,
     getUserDataOder,
+    nowDelivery,
     updateStatus,
+    nowDone,
+    nowCooking,
     getalluserorders
 } = require("../controllers/order");
 
@@ -71,4 +74,8 @@ router.get(
     // isAuthenticated,
     getUserDataOder
 );
+router.post("/admin/nowcooking", nowCooking);
+router.post("/admin/nowDone", nowDone);
+router.post("/admin/nowDelivery", nowDelivery);
+
 module.exports = router;

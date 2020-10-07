@@ -4,6 +4,8 @@ import AdminShajiDash from './AdminShajiDash';
 import { getUserDataFromOrder } from './help/AddCategory'
 import "./AdminShajiOrderTakeOrder.css"
 import { Link } from 'react-router-dom';
+import { nowCooking ,nowDone,nowDelivery} from './help/adminorderstatushelper';
+
 export default function AdminShajiOrderTakeOrder({match}) {
     const [user, setuser] = useState("");
     const [userphone, setuserphone] = useState("");
@@ -14,18 +16,43 @@ export default function AdminShajiOrderTakeOrder({match}) {
     const [productName, setproductName] = useState([]);
     const [productQty, setproductQty] = useState([]);
     const [productRate, setproductRate] = useState([]);
+    const [ouruserId, setouruserId] = useState([]);
 
+    const [orderId,setOrderid] = useState("");
     const perLoadUserOrders = () => {
             
     }
     const cooking = () => {
+            nowCooking({ouruserId,orderId}).then(res => {
+                console.log(res);
+                alert("Cooking")
+            })
+            .catch(err => {
+                console.log(err);
 
+            })
     }
     const done = () => {
-        
+        nowDone({ouruserId,orderId}).then(res => {
+            console.log(res);
+            alert("Done Cooking")
+
+        })
+        .catch(err => {
+            console.log(err);
+
+        })
     }  
     const delivery = () => {
-        
+        nowDelivery({ouruserId,orderId}).then(res => {
+            console.log(res);
+            alert("Forward Delivery")
+
+        })
+        .catch(err => {
+            console.log(err);
+
+        })
     }
     const onLoad = (userId) => {
         getUserDataFromOrder(userId).then(data => {
@@ -35,7 +62,7 @@ export default function AdminShajiOrderTakeOrder({match}) {
             console.log(data.order);
             console.log(data.user);
             console.log("USER {{{ ",data.order.userid);
-
+            setouruserId(data.order.userid);
             setuser(data.user.name);
             setuserphone(data.user.phone);
             setuserloc(data.user.address);
@@ -46,8 +73,10 @@ export default function AdminShajiOrderTakeOrder({match}) {
             setproductRate(data.order.productprice);
         })
     }
+    
     useEffect(() => {
         onLoad(match.params.userId)
+        setOrderid(match.params.userId)
     }, [])
     return (
         <AdminShajiDash>
@@ -129,17 +158,17 @@ export default function AdminShajiOrderTakeOrder({match}) {
                     Cooking
                 </button>
    <br/> 
-              <Link>
-              <button className="btn btn-danger btn-block rounded">
+        
+              <button onClick={done} className="btn btn-danger btn-block rounded">
                     Done
                 </button>
    <br/> 
-              </Link>
-                <Link>
-                <button className="btn btn-success btn-block rounded">
+          
+       
+                <button onClick={delivery} className="btn btn-success btn-block rounded">
                     Delivery
                 </button>
-                </Link>
+            
    <br/> 
                 
     </div>

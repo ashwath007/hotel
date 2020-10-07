@@ -26,6 +26,9 @@ var userSchema = new mongoose.Schema({
     order: [{
         type: String
     }],
+    loc: {
+        type: String
+    },
     location: {
         type: {
             type: String,

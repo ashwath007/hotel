@@ -40,14 +40,17 @@ export default function Order() {
     const userId = isAutheticated().user._id;
     const token = isAutheticated().token;
     useEffect(() => {
+        setInterval(() => {
         loadUserOrders(userId)
+            
+        }, 1000);
         
     }, [])
 
   
     return (
         <div>
-            <UserBase/>
+            <UserBase/> 
             {/* {renderNames()} */}
             <h1>Orders</h1>
             <div className="container mb-5">

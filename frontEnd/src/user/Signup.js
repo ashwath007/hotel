@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import { signup } from "../auth/helper";
 import { v4 as uuidv4 } from 'uuid';
 import UserBase from "./UserBase";
-
+import "./auth.css"
 import "./UserBase.css"
 const Signup = () => {
   const [values, setValues] = useState({
@@ -37,23 +37,34 @@ const Signup = () => {
       return <Redirect/>
     }
   }
+  const showLoading = () => {
+    if(loading){
+      return(
+        <div class="spinner-border text-primary spin" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      )
+    
+    }
+  }
   const onSubmit = event => {
     const CODE = uuidv4().substr(1, 4);
     setcode(CODE)
     console.log("CODE : ",code);
 
     event.preventDefault();
-    setValues({ ...values, error: false,code:CODE });
+    setValues({ ...values, error: false,code:CODE,loading:true });
     signup({ name, phone,code })
       .then(data => {
-        if (data.error) {
+        if (data.error) { 
           setValues({ ...values, error: data.error, success: false });
         } else {
           console.log(data);
           if(data.userAlready){
               setValues({
                 ...values,
-                userAlready:true
+                userAlready:true,
+                loading:false
               })
           }
           console.log("user Id : ",data.id);
@@ -140,7 +151,8 @@ const Signup = () => {
     <button className="btn btn-info rounded">
       Signin
     </button> 
-    </Link>
+    </Link><br/>
+    {showLoading()}
  
   </div>
     

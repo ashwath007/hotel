@@ -102,7 +102,19 @@ const Signin = () => {
   <button type="submit" onClick={onSubmit} class="btn btn-primary btn-block rounded">Submit</button>
 </form>
     </div>
-
+    <div className="container mt-5">
+    
+      <div className="text-center mt-5">
+        <hr/>
+    <p>If you are new here, please signup</p>
+    <Link to="/signup">
+    <button className="btn btn-info rounded">
+        Signup
+      </button>
+    </Link>
+     
+      </div>
+    </div>
     </div>
   );
 };

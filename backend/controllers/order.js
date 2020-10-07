@@ -28,7 +28,7 @@ exports.createOrder = (req, res) => {
 
         }
         console.log("got User  : ", gotUser);
-        gotUser.location = req.body.location;
+        gotUser.loc = "User Exist";
 
         gotUser.save((err, locSaved) => {
             if (err) {
@@ -66,7 +66,7 @@ exports.createOrder = (req, res) => {
                     })
                 }
             });
-
+            //
         })
     })
 };
@@ -301,5 +301,91 @@ exports.getUserDataOder = (req, res) => {
             })
         })
 
+    })
+}
+
+
+exports.nowCooking = (req, res) => {
+    console.log("nowCooking");
+    console.log(req.body);
+    uorder.findById(req.body.orderId, (err, cook) => {
+        if (err) {
+            return res.status(400).json({
+                error: err
+            })
+
+        }
+        console.log(cook);
+        cook.orderstatus = "Cooking"
+        cook.save((err, cooked) => {
+            if (err) {
+                return res.status(400).json({
+                    error: err
+                })
+
+            }
+            console.log(cooked);
+            return res.json({
+                msg: "Cooking"
+            })
+        });
+    })
+}
+
+
+exports.nowDone = (req, res) => {
+    console.log("nowDone");
+
+    console.log(req.body);
+    uorder.findById(req.body.orderId, (err, cook) => {
+        if (err) {
+            return res.status(400).json({
+                error: err
+            })
+
+        }
+        console.log(cook);
+        cook.orderstatus = "Done Cooking"
+        cook.save((err, cooked) => {
+            if (err) {
+                return res.status(400).json({
+                    error: err
+                })
+
+            }
+            console.log(cooked);
+            return res.json({
+                msg: "Done Cooking"
+            })
+        });
+    })
+
+}
+
+exports.nowDelivery = (req, res) => {
+    console.log("nowDelivery");
+
+    console.log(req.body);
+    uorder.findById(req.body.orderId, (err, cook) => {
+        if (err) {
+            return res.status(400).json({
+                error: err
+            })
+
+        }
+        console.log(cook);
+        cook.orderstatus = "Out for Delivery"
+        cook.save((err, cooked) => {
+            if (err) {
+                return res.status(400).json({
+                    error: err
+                })
+
+            }
+            console.log(cooked);
+            return res.json({
+                msg: "Out for Delivery"
+            })
+        });
     })
 }
