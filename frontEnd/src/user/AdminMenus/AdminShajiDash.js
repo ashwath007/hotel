@@ -27,6 +27,11 @@ const AdminShajiDash = ({
   <li className="nav-item">
     <a className="nav-link text-white" href="#">Delivery</a>
   </li>
+  <li className="nav-item">
+    <a className="nav-link text-white" href="#">Account</a>
+  </li>  <li className="nav-item">
+    <a className="nav-link text-white" href="#">Manage Business</a>
+  </li>
 </ul>
 
         <div className="container">

@@ -1,0 +1,17 @@
+.now {
+    border-radius: 30%;
+    color: white;
+    background-color: black;
+}
+
+.profile {
+    border-radius: 30%;
+    color: black;
+    background-color: white;
+    border-width: 2px;
+    border-color: black;
+}
+
+.back {
+    color: black;
+}

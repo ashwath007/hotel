@@ -14,6 +14,8 @@ const categoryRoutes = require("./routes/category");
 const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
 const locationRoutes = require("./routes/location");
+const fleetsRoutes = require("./routes/fleets");
+
 // const yy = require("./models/product");
 //DB Connection
 mongoose
@@ -39,6 +41,8 @@ app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
 
 app.use("/api", locationRoutes);
+app.use("/api", fleetsRoutes);
+
 
 //PORT
 const port = process.env.PORT || 8000;

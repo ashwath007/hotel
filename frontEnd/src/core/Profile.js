@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { isAutheticated } from '../auth/helper'
 import { API } from '../backend'
-import "./Profile.css"
+// import "./Profile.css"
 import Map from "mapmyindia-react";
 
 

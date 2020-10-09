@@ -3,7 +3,7 @@ import { isAutheticated } from '../auth/helper'
 import UserBase from '../user/UserBase'
 import { getallUserOrder } from './helper/orderHelper'
 import MenuBar from './MenuBar'
-import "./Order.css"
+// import "./Order.css"
 export default function Order() {
     const [userUId, setuserUId] = useState(0)
     const [orders,setOrders] = useState([]);

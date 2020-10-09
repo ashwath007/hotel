@@ -3,7 +3,7 @@ import UserBase from '../UserBase';
 import AdminShajiDash from './AdminShajiDash';
 import { getUserDataFromOrder } from './help/AddCategory'
 import "./AdminShajiOrderTakeOrder.css"
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { nowCooking ,nowDone,nowDelivery,nowDelivered} from './help/adminorderstatushelper';
 
 export default function AdminShajiOrderTakeOrder({match}) {
@@ -12,7 +12,7 @@ export default function AdminShajiOrderTakeOrder({match}) {
     const [userloc, setuserloc] = useState("");
     const [total, settotal] = useState("");
     const [status, setstatus] = useState("");
-
+    const [redirectd, setredirectd] = useState(false)
     const [productName, setproductName] = useState([]);
     const [productQty, setproductQty] = useState([]);
     const [productRate, setproductRate] = useState([]);
@@ -47,6 +47,7 @@ export default function AdminShajiOrderTakeOrder({match}) {
         nowDelivery({ouruserId,orderId}).then(res => {
             console.log(res);
             alert("Forward Delivery")
+            setredirectd(true)
 
         })
         .catch(err => {
@@ -57,20 +58,17 @@ export default function AdminShajiOrderTakeOrder({match}) {
     const delivered = () => {
         nowDelivered({ouruserId,orderId}).then(res => {
             console.log(res);
-            alert("Forward Delivery")
-            return (
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-            )
+           
         })
         .catch(err => {
             console.log(err);
 
         })
+    }
+    const isRedirectTODelivery = () => {
+        if(redirectd){
+            return <Redirect to={`/admin/shaji/dashboard/orders/orderout/${orderId}/delivery`}/>
+        }
     }
     const onLoad = (userId) => {
         getUserDataFromOrder(userId).then(data => {
@@ -171,7 +169,7 @@ export default function AdminShajiOrderTakeOrder({match}) {
     })}
     <div className="mt-5 cen">
         <h5>Update Status</h5>
-       
+       {isRedirectTODelivery()}
         <button onClick={cooking} className="btn btn-info btn-block rounded">
                     Cooking
                 </button>
@@ -191,9 +189,11 @@ export default function AdminShajiOrderTakeOrder({match}) {
                 <div className="alert alert-light mt-4" role="alert">
   Delivered , You have successfully delivered the order , :) 
 </div>
-                <button onClick={delivered} className="btn btn-success btn-block rounded">
+                <button onClick={delivered} className="btn btn-success btn-block rounded" data-target="#exampleModal">
                     Delivered
                 </button>
+        
+               
             
    <br/> 
                 

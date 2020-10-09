@@ -14,6 +14,8 @@ import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
 import Cart from "./core/Cart";
 import AdminHome from "./user/AdminHome";
+import AddFleets from "./user/AdminMenus/Fleets/AddFleets" 
+import EditFleets from "./user/AdminMenus/Fleets/EditFleets" 
 
 import AdminShajiRoute from "./auth/helper/AdminShajiRoutes";
 import AdminShajiDashMenu from "./user/AdminMenus/AdminShajiDashMenu";
@@ -30,10 +32,12 @@ import Bill from "./core/Bill";
 import Cod from "./core/Cod";
 import Order from "./core/Order";
 import Profile from "./core/Profile";
-import ProfileEdit from "./core/ProfileEdit";
-
+// import ProfileEdit from "./core/ProfileEdit";
+import AdminShajiDashOrderOutDelivery from "./user/AdminMenus/AdminShajiDashOrderOutDelivery"
 import AdminShajiOrderTakeOrder from "./user/AdminMenus/AdminShajiOrderTakeOrder";
 import SignupLoc from "./user/SignupLoc"
+import Fleetsignin from "./user/FleetsMenu/Fleetsignin"
+import FleetHome from "./user/FleetsMenu/FleetHome"
 const Routes = () => {
   return (
     <BrowserRouter>
@@ -42,13 +46,18 @@ const Routes = () => {
         <Route path="/signup" exact component={Signup} />
         <Route path="/signin" exact component={Signin} />
         <Route path="/cart" exact component={Cart} />
+        //Fleets
+        <Route path="/fleets" exact component={Fleetsignin} />
+        <Route path="/fleets/allorders" exact component={FleetHome} />
+        
+        //
         <PrivateRoute path="/user/dashboard" exact component={UserDashBoard} />
         <PrivateRoute path="/cart/purchase" exact component={Purchase} />
         <PrivateRoute path="/cart/bill" exact component={Bill} />
         <PrivateRoute path="/cart/bill/cod" exact component={Cod} />
         <PrivateRoute path="/order" exact component={Order} />
         <PrivateRoute path="/profile" exact component={Profile} />
-        <PrivateRoute path="/profileedit" exact component={ProfileEdit} />
+        {/* <PrivateRoute path="/profileedit" exact component={ProfileEdit} /> */}
 
 
 
@@ -91,6 +100,14 @@ const Routes = () => {
           component={UpdateProduct}
         />
         <AdminShajiRoute path="/admin/shaji/dashboard/orders/takeorder/:userId" exact component={AdminShajiOrderTakeOrder}/>
+        <AdminShajiRoute path="/admin/shaji/dashboard/orders/orderout/:orderId/delivery" exact component={AdminShajiDashOrderOutDelivery}/>
+
+
+
+        //Fleets Delivery Controls
+        <AdminShajiRoute path="/admin/shaji/dashboard/fleets/addfleets" exact component={AddFleets}/>
+        <AdminShajiRoute path="/admin/shaji/dashboard/fleets/editfleets" exact component={EditFleets}/>
+
 
       </Switch>
     </BrowserRouter>
