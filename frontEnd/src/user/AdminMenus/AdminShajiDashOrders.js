@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import AdminShajiDash from './AdminShajiDash'
 import { getOrdersAdminAll } from './help/AddCategory'
 import "./AdminShajiDashOrders.css"
+import { API } from '../../backend'
+import { holdOrders,rejectOrder } from './help/orderstatushelper'
+
 export default function AdminShajiDashOrders() {
     const [error, seterror] = useState(false)
     const [orders,setOrders] = useState([]);
@@ -69,7 +72,22 @@ export default function AdminShajiDashOrders() {
             setUserloc(res.USER_LOCATION)
         })
     }
-
+    const holdOrdersuser = (orderID) => {
+        holdOrders(orderID).then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+    const rejectOrderuser = (orderID) => {
+        rejectOrder(orderID).then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
     return (
         <AdminShajiDash>
             {errorHandler()}
@@ -96,12 +114,15 @@ export default function AdminShajiDashOrders() {
                             
                         </div>
                         <div className="col-4">
-                            <button className="btn btn-warning">
+                            {/* <Link to={`${API}/admin/shaji/dashboard/orders/holdorders/${orderID[index]}`}> */}
+                            <button onClick={()=>{holdOrdersuser(orderID[index])}} className="btn btn-warning">
                                 Hold Order
                             </button>
+                            {/* </Link> */}
+                         
                         </div>
                         <div className="col-4">
-                            <button className="btn btn-danger">
+                            <button onClick={()=>{rejectOrderuser(orderID[index])}} className="btn btn-danger">
                                 Reject Order
                             </button>
                         </div>

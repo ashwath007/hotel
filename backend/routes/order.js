@@ -11,6 +11,9 @@ const {
     getOrderStatus,
     getUserDataOder,
     nowDelivery,
+    holdOrder,
+    rejectOrder,
+    nowDelivered,
     updateStatus,
     nowDone,
     nowCooking,
@@ -74,8 +77,14 @@ router.get(
     // isAuthenticated,
     getUserDataOder
 );
+router.get("/admin/shaji/dashboard/orders/holdorders/:orderId", holdOrder)
+router.get("/admin/shaji/dashboard/orders/rejectOrder/:orderId", rejectOrder)
+
+
 router.post("/admin/nowcooking", nowCooking);
 router.post("/admin/nowDone", nowDone);
 router.post("/admin/nowDelivery", nowDelivery);
+router.post("/admin/nowDelivered", nowDelivered);
+
 
 module.exports = router;

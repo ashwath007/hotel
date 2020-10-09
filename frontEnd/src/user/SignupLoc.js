@@ -157,7 +157,7 @@ const moveToHome = () => {
       {shoemap()}
         <div className="container mt-5">
             <div>
-  <button type="submit" onClick={getGLocation} class="btn btn-info btn-block rounded">Get My Location</button>
+  <button type="submit" onClick={getGLocation} className="btn btn-info btn-block rounded">Get My Location</button>
 
             </div>
         <form>
@@ -165,14 +165,14 @@ const moveToHome = () => {
   {onLoadMap()}
   {onLoadMapUserLoc()}
   {moveToHome()}
-  <div class="form-group mt-4">
+  <div className="form-group mt-4">
     <label for="exampleFormControlSelect1">Confirm Location</label>
-    <input  type="text" value={ulocation} class="form-control" id="exampleFormControlSelect1"/>
+    <input  type="text" value={ulocation} className="form-control" id="exampleFormControlSelect1"/>
     
   </div>
   <div>
     
-  <button type="submit" onClick={onSubmit} class="btn btn-warning btn-block rounded">Set Location</button>
+  <button type="submit" onClick={onSubmit} className="btn btn-warning btn-block rounded">Set Location</button>
   <p className="alreadyuser mt-4"><small>If use are near coimbatore, sorry we are not providing service</small> </p>
   <div className="signinbtn">
     <Link to="/signin">

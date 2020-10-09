@@ -4,7 +4,7 @@ import AdminShajiDash from './AdminShajiDash';
 import { getUserDataFromOrder } from './help/AddCategory'
 import "./AdminShajiOrderTakeOrder.css"
 import { Link } from 'react-router-dom';
-import { nowCooking ,nowDone,nowDelivery} from './help/adminorderstatushelper';
+import { nowCooking ,nowDone,nowDelivery,nowDelivered} from './help/adminorderstatushelper';
 
 export default function AdminShajiOrderTakeOrder({match}) {
     const [user, setuser] = useState("");
@@ -48,6 +48,24 @@ export default function AdminShajiOrderTakeOrder({match}) {
             console.log(res);
             alert("Forward Delivery")
 
+        })
+        .catch(err => {
+            console.log(err);
+
+        })
+    }
+    const delivered = () => {
+        nowDelivered({ouruserId,orderId}).then(res => {
+            console.log(res);
+            alert("Forward Delivery")
+            return (
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+            )
         })
         .catch(err => {
             console.log(err);
@@ -163,10 +181,18 @@ export default function AdminShajiOrderTakeOrder({match}) {
                     Done
                 </button>
    <br/> 
-          
+   <div className="alert alert-light mt-4" role="alert">
+  Delivery Button will reflect on user phone , please click if the delivery person picked up the order
+</div>
        
-                <button onClick={delivery} className="btn btn-success btn-block rounded">
+                <button onClick={delivery} className="btn btn-warning btn-block rounded">
                     Delivery
+                </button>
+                <div className="alert alert-light mt-4" role="alert">
+  Delivered , You have successfully delivered the order , :) 
+</div>
+                <button onClick={delivered} className="btn btn-success btn-block rounded">
+                    Delivered
                 </button>
             
    <br/> 

@@ -30,6 +30,8 @@ import Bill from "./core/Bill";
 import Cod from "./core/Cod";
 import Order from "./core/Order";
 import Profile from "./core/Profile";
+import ProfileEdit from "./core/ProfileEdit";
+
 import AdminShajiOrderTakeOrder from "./user/AdminMenus/AdminShajiOrderTakeOrder";
 import SignupLoc from "./user/SignupLoc"
 const Routes = () => {
@@ -46,6 +48,8 @@ const Routes = () => {
         <PrivateRoute path="/cart/bill/cod" exact component={Cod} />
         <PrivateRoute path="/order" exact component={Order} />
         <PrivateRoute path="/profile" exact component={Profile} />
+        <PrivateRoute path="/profileedit" exact component={ProfileEdit} />
+
 
 
         <AdminRoute path="/admin/dashboard" exact component={AdminDashBoard} />

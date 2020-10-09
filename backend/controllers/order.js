@@ -389,3 +389,73 @@ exports.nowDelivery = (req, res) => {
         });
     })
 }
+exports.nowDelivered = (req, res) => {
+    console.log("nowDelivered");
+
+    console.log(req.body);
+    uorder.findById(req.body.orderId, (err, cook) => {
+        if (err) {
+            return res.status(400).json({
+                error: err
+            })
+
+        }
+        console.log(cook);
+        cook.orderstatus = "Delivered"
+        cook.save((err, cooked) => {
+            if (err) {
+                return res.status(400).json({
+                    error: err
+                })
+
+            }
+            console.log(cooked);
+            return res.json({
+                msg: "Out for Delivery"
+            })
+        });
+    })
+}
+exports.holdOrder = (req, res) => {
+    console.log("hoo");
+
+    console.log(req.params.orderId);
+    console.log("Hola Hola")
+    uorder.findById(req.params.orderId, (err, gots) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Could't find the order"
+            })
+        }
+        console.log(gots)
+        gots.orderstatus = "Hold Order";
+        gots.save((err, saved) => {
+            if (err) {
+                return res.status(400).json({
+                    error: "Could't find the order"
+                })
+            }
+            console.log(saved)
+        })
+    })
+}
+
+exports.rejectOrder = (req, res) => {
+    uorder.findById(req.params.orderId, (err, gots) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Could't find the order"
+            })
+        }
+        console.log(gots)
+        gots.orderstatus = "Rejected Order";
+        gots.save((err, saved) => {
+            if (err) {
+                return res.status(400).json({
+                    error: "Could't find the order"
+                })
+            }
+            console.log(saved)
+        })
+    })
+}
