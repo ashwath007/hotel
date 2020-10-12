@@ -1,9 +1,10 @@
 import React,{useEffect,useState} from 'react'
-import {allFleet} from "../fleethelp/fleetapi"
-import { Link } from 'react-router-dom';
+import {allFleet,deleteFleet} from "../fleethelp/fleetapi"
+import { Link, Redirect } from 'react-router-dom';
 
 export default function EditFleets() {
     const [fleets, setFleets] = useState([])
+    const [redirect, setredirect] = useState(false)
     const onLoad = () => {
         allFleet().then(res =>{
             console.log(res[0])
@@ -32,11 +33,28 @@ export default function EditFleets() {
         }
         
     }
+    const isRedirect = () => {
+        if(redirect){
+            return  <Redirect to="/admin/shaji/dashboard/menu"/>
+        }
+    }
+    const deleteFleets = (fid) => {
+        deleteFleet(fid).then((res)=>{
+            console.log(res)
+            if(res.error){
+                console.log(res.error)
+            }
+            setredirect(true)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
     return (
         <div>
             <div className="text-center mt-5">
             <h3>Edit Fleets</h3>
-
+        {isRedirect()}
             </div>
             <div className="container mt-5">
                 <div className="mt-5">
@@ -52,11 +70,13 @@ export default function EditFleets() {
         <p class="card-text">Press edit if you have to edit the delivery account</p>
         <div className="row text-center" style={{backgroundColor:'#487EB0'}}>
             <div className="col-6">
-            <a href="#" class="btn btn-warning">Edit</a>
+            <a href={`/admin/shaji/dashboard/fleets/editfleets/${fleets[F]._id}`} class="btn btn-warning">Edit</a>
 
             </div>
             <div className="col-6">
-        <a href="#" class="btn btn-danger">Delete</a>
+                <button onClick={()=>{deleteFleets(fleets[F]._id)}} className="btn btn-info">
+                                Delete
+                </button>
                 </div>
         </div>
       

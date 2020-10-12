@@ -2,3 +2,8 @@
 [0929/180618.495:ERROR:minidumpwritedump_with_crashpad_info.cc(661)] Failed to write minidump file
 [0929/180618.495:ERROR:crash_report_exception_handler.cc(132)] TryMiniDumpWriteDumpWithCrashpadInfo failed
 [0929/180618.505:ERROR:process_info.cc(359)] UncheckedAllocate
+[1010/210700.389:ERROR:settings.cc(430)] Settings version is not 5
+[1010/211700.399:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1011/102825.391:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1011/112818.773:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1012/152647.106:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

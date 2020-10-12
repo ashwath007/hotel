@@ -18,10 +18,20 @@ export default function FleetsDignin() {
     const auth = event => {
         event.preventDefault()
         fleetSignup({code,phone}).then(res => {
-            console.log(res);   
-            localStorage.setItem("fleets",res._id);
-        setValue({code:"",phone:""})
-        setredirect(true)
+            console.log(res);  
+            if(res.done){
+                localStorage.setItem("fleets",res.done._id);
+                setValue({code:"",phone:""})
+                setredirect(true)
+            } 
+            if(res.err){
+                return(
+                    <div class="alert alert-secondary" role="alert">
+                        {res.err}
+</div>
+                )
+            }
+           
 
         })
         .catch(err => {

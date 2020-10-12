@@ -22,7 +22,21 @@
 }
 
 .cartpage {
-    background-color: ghostwhite;
+    background-color: #192A56;
+    color: white;
+}
+
+.edtbtn {
+    color: #2C3335;
+    background-color: #DAE0E2;
+}
+
+.txtcol {
+    color: #192A56;
+}
+
+.pro {
+    color: #192A56;
 }
 
 .eatbtn {
@@ -48,10 +62,10 @@ body {
 }
 
 .jji {
-    background-color: ghostwhite;
+    background-color: #192A56;
 }
 
 .billbtn {
-    background-color: #F3B431;
+    background-color: #535C68;
     color: #ffffff;
 }

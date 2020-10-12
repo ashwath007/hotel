@@ -38,6 +38,7 @@ import AdminShajiOrderTakeOrder from "./user/AdminMenus/AdminShajiOrderTakeOrder
 import SignupLoc from "./user/SignupLoc"
 import Fleetsignin from "./user/FleetsMenu/Fleetsignin"
 import FleetHome from "./user/FleetsMenu/FleetHome"
+import EditFleetsData from "./user/AdminMenus/Fleets/EditFleetsData"
 const Routes = () => {
   return (
     <BrowserRouter>
@@ -107,6 +108,9 @@ const Routes = () => {
         //Fleets Delivery Controls
         <AdminShajiRoute path="/admin/shaji/dashboard/fleets/addfleets" exact component={AddFleets}/>
         <AdminShajiRoute path="/admin/shaji/dashboard/fleets/editfleets" exact component={EditFleets}/>
+
+        //Edit Fleets
+        <AdminShajiRoute path="/admin/shaji/dashboard/fleets/editfleets/:fleetId" exact component={EditFleetsData}/>
 
 
       </Switch>

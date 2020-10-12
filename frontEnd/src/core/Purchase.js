@@ -42,13 +42,14 @@ autoCountBtn()
               <div>
                     {PRODUCTS.map((pro,I)=>{
                 return(
-                    <div className="container card">
+                    <div className="container card mb-2">
                         <div className="row">
                             <div className="col-4">
-                                <p className="">{pro}</p>
+                                <p className="txtcol">{pro}</p>
                             </div>
                             <div className="col-4">
-                            <p className="">{y[I]}</p>
+                              <p className="txtcol"><strong>Qty</strong> </p>
+                            <p className="txtcol"> {y[I]}</p>
 
                             </div>
                         </div>
@@ -119,7 +120,7 @@ autoCountBtn()
                 return(
                     <div className="ml-4">
                         <div className="row">
-                            <div className="col-4">
+                            <div className="col-4 ">
                             <h6>{product.name}</h6>
 
                             </div>
@@ -144,8 +145,8 @@ autoCountBtn()
         <div className="">
         <UserBase/>
 
-        <div className="cart">
-        <ul class="nav navbar-light backoffer justify-content-center ">
+        <div className="cart shadow-lg pb-1 pt-2">
+        {/* <ul class="nav navbar-light backoffer justify-content-center ">
   <li class="nav-item ">
     <a class="nav-link text-white" href="#">Order</a>
   </li>
@@ -153,10 +154,10 @@ autoCountBtn()
     <a class="nav-link text-white" href="#">Offers</a>
   </li>
   
-</ul>
+</ul> */}
 <div className="container">
     <div className="gifbox">
-    <img src={cookGIF} className="gifimg" alt="..."/>
+    {/* <img src={cookGIF} className="gifimg" alt="..."/> */}
     </div>
 <h6 className="mt-5">Bill Details</h6>
 <div className="card cartpage">
@@ -169,12 +170,12 @@ autoCountBtn()
         </div>
 {loadAllProducts()}
 <div className="card text-center">
-<h6 classNAme="ml-4 totaltxtt">Total : &#8377;{totalPrice}</h6>
+<h6 className="ml-4  txtcol">Total : &#8377;{totalPrice}</h6>
 </div>
 </div>
 <div className="">
     <Link to="/">
-    <button className="btn btn-info btn-block rounded mt-4 mb-5">
+    <button className="btn edtbtn btn-block rounded mt-4 mb-5">
         Edit Order
     </button>
     </Link>

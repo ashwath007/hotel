@@ -16,8 +16,11 @@ const fleetSchema = new mongoose.Schema({
     },
     fid: {
         type: String
-    }
-})
+    },
+    status: String,
+    orders: []
+
+}, { timestamps: true })
 
 
 module.exports = mongoose.model("Fleets", fleetSchema)

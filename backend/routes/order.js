@@ -10,6 +10,7 @@ const {
     getAllOrdersToday,
     getOrderStatus,
     getUserDataOder,
+    alluserorderdata,
     nowDelivery,
     holdOrder,
     rejectOrder,
@@ -85,6 +86,8 @@ router.post("/admin/nowcooking", nowCooking);
 router.post("/admin/nowDone", nowDone);
 router.post("/admin/nowDelivery", nowDelivery);
 router.post("/admin/nowDelivered", nowDelivered);
+
+router.get("/admin/shaji/dashboard/orders/loadorderanduser/assign/:orderId", alluserorderdata)
 
 
 module.exports = router;

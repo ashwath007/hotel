@@ -3,6 +3,7 @@ const { Order, ProductCart } = require("../models/order");
 // const { UOrder } = require("../models/uorder");
 const uorder = require("../models/uorder");
 const user = require("../models/user");
+const fleets = require("../models/fleets");
 exports.getOrderById = (req, res, next, id) => {
     Order.findById(id)
         .populate("products.product", "name price")
@@ -457,5 +458,40 @@ exports.rejectOrder = (req, res) => {
             }
             console.log(saved)
         })
+    })
+}
+
+exports.alluserorderdata = (req, res) => {
+    console.log(req.params.orderId)
+    uorder.findById(req.params.orderId, (err, done) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Could't find the order"
+            })
+        }
+        console.log(done)
+        console.log(done.userid)
+
+        user.findById(done.userid, (err, FF) => {
+            if (err) {
+                return res.status(400).json({
+                    error: "Counl'd find the user"
+                })
+            }
+            console.log(FF)
+            fleets.find({}, (err, all) => {
+                if (err) {
+                    return res.status(400).json({
+                        error: "No Delivery boy available"
+                    })
+                }
+                return res.json({
+                    order: done,
+                    userdata: FF,
+                    fleets: all
+                })
+            })
+        })
+
     })
 }
