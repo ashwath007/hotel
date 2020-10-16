@@ -22,6 +22,9 @@ const userorderSchema = new mongoose.Schema({
     total: {
         type: String
     },
+    delivered: {
+        type: String
+    },
     productqty: [{
         type: Array
     }],
