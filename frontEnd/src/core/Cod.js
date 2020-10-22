@@ -244,8 +244,7 @@ const shoemap  = () => {
     return (
         <div>
             
-            <h1>COD</h1>
-    <h4>{JSON.stringify(latitude)} {JSON.stringify(longitude)}</h4>
+   
     <div className="container">
   {shoemap()}
     </div>
@@ -263,8 +262,8 @@ const shoemap  = () => {
     {loadAllUserDatas()}
 
       {showUserDelAddres()}
-  <button onClick={confirmOrder} type="submit" class="btn btn-primary">Confirm Address</button>
-  <button onClick={getGLocation} type="submit" class="btn btn-primary">Loc</button>
+  <button onClick={confirmOrder} type="submit" class="btn btn-primary btn-block mt-5">Confirm Address</button>
+
 
 </form>
 

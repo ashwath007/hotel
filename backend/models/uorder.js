@@ -25,6 +25,9 @@ const userorderSchema = new mongoose.Schema({
     delivered: {
         type: String
     },
+    paymentype: {
+        type: String
+    },
     productqty: [{
         type: Array
     }],

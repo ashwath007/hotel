@@ -103,10 +103,10 @@ export default function Order() {
                     return(
                         <div>
                             {/* {colorGenerator()} */}
-    
+                        
                         <div className="card shadow ordercard mb-4" key={index} style={{backgroundColor:"#7CEC9F"}}>
                             <div className="pr-3 pl-3 pt-3 pb-2">
-                            <h6><strong>Item</strong> {orders[key]}</h6>
+                            <h6><strong>Item</strong> {orders[index]}</h6>
                             <h6><strong>Qty</strong> {qty[index]}</h6>
                             <h6><strong>Price</strong> {price[index]}</h6>
     
@@ -135,7 +135,7 @@ export default function Order() {
     
                         <div className="card shadow-lg ordercard mb-4" key={index} style={{backgroundColor:"#FF4848",}}>
                             <div className="pr-3 pl-3 pt-3 pb-2" style={{color:"white"}}>
-                            <h6><strong>Item</strong> {orders[key]}</h6>
+                            <h6><strong>Item</strong> {orders[index]}</h6>
                             <h6><strong>Qty</strong> {qty[index]}</h6>
                             <h6><strong>Price</strong> {price[index]}</h6>
     
@@ -164,7 +164,7 @@ export default function Order() {
     
                         <div className="card shadow ordercard mb-4" key={index} style={{backgroundColor:"#4834DF",}}>
                             <div className="pr-3 pl-3 pt-3 pb-2" style={{color:"white"}}>
-                            <h6><strong>Item</strong> {orders[key]}</h6>
+                            <h6><strong>Item</strong> {orders[index]}</h6>
                             <h6><strong>Qty</strong> {qty[index]}</h6>
                             <h6><strong>Price</strong> {price[index]}</h6>
     
@@ -193,7 +193,7 @@ export default function Order() {
     
                         <div className="card shadow ordercard mb-4" key={index} style={{backgroundColor:"#F3B431",}}>
                             <div className="pr-3 pl-3 pt-3 pb-2" style={{color:"white"}}>
-                            <h6><strong>Item</strong> {orders[key]}</h6>
+                            <h6><strong>Item</strong> {orders[index]}</h6>
                             <h6><strong>Qty</strong> {qty[index]}</h6>
                             <h6><strong>Price</strong> {price[index]}</h6>
     
@@ -239,7 +239,7 @@ export default function Order() {
     
                         <div className="card shadow ordercard mb-4" key={index} style={{backgroundColor:"#AE1438",}}>
                             <div className="pr-3 pl-3 pt-3 pb-2" style={{color:"white"}}>
-                            <h6><strong>Item</strong> {orders[key]}</h6>
+                            <h6><strong>Item</strong> {orders[index]}</h6>
                             <h6><strong>Qty</strong> {qty[index]}</h6>
                             <h6><strong>Price</strong> {price[index]}</h6>
     
@@ -272,7 +272,7 @@ export default function Order() {
     
                         <div className="card shadow ordercard mb-4" key={index} style={{backgroundColor:"#2C3335",}}>
                             <div className="pr-3 pl-3 pt-3 pb-2" style={{color:"white"}}>
-                            <h6><strong>Item</strong> {orders[key]}</h6>
+                            <h6><strong>Item</strong> {orders[index]}</h6>
                             <h6><strong>Qty</strong> {qty[index]}</h6>
                             <h6><strong>Price</strong> {price[index]}</h6>
     
@@ -343,7 +343,7 @@ export default function Order() {
     
                         <div className="card shadow ordercard mb-4" key={index} style={{backgroundColor:"#2C3335",color:'white'}}>
                             <div className="pr-3 pl-3 pt-3 pb-2">
-                            <h6><strong>Item</strong> {orders[key]}</h6>
+                            <h6><strong>Item</strong> {orders[index]}</h6>
                             <h6><strong>Qty</strong> {qty[index]}</h6>
                             <h6><strong>Price</strong> {price[index]}</h6>
     

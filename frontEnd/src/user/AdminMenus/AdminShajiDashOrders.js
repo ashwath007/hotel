@@ -93,16 +93,17 @@ export default function AdminShajiDashOrders() {
             {errorHandler()}
             <div className="container ordertop">
             {Object.keys(orders).map((key,index)=>{
-                if(total[index]){
+                if(total[index] && orders[index]){
                     return(
                         <div key={index} className="card pt-3 pb-3 pr-2 pl-2 mb-4">
-                        <h6><strong>Item</strong> {orders[key]}</h6>
-                    <h6><strong>Status</strong> {status[index]}</h6>
-                    <h6>{price[index]}</h6>
-                    <h6>{qty[index]}</h6>
+                            <p>{index+1}</p>
+                        <h6><strong>Item</strong> {orders[index+1]}</h6>
+                    <h6><strong>Status</strong> {status[index+1]}</h6>
+                    <h6>{price[index+1]}</h6>
+                    <h6>{qty[index+1]}</h6>
                     <h5>TOTAL :{total[index]}</h5>
     
-                    <h6>{userid[index]}</h6>
+
                     <div className="card cardback">
                     <div className="row">
                         <div className="col-4">

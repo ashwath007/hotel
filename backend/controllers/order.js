@@ -45,7 +45,7 @@ exports.createOrder = (req, res) => {
             UORDER.orderId = req.body.id;
             UORDER.userid = locSaved._id;
             UORDER.total = req.body.totalPrice;
-
+            UORDER.paymentype = "COD"
             UORDER.save((error, fo) => {
                 if (error) {
                     console.log(error);

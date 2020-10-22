@@ -121,7 +121,7 @@ const Signup = () => {
       {successMessage()}
       {onRedirected()}
     <UserBase/>
-      <div>
+      <div className="mt-5">
         <div className="container mt-5">
         <form>
   <div class="form-group">
